@@ -6,6 +6,7 @@ import { auto } from "@cloudinary/url-gen/actions/resize";
 import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
 import { AdvancedImage } from "@cloudinary/react";
 import { useEffect, useState } from "react";
+import { useCallback } from "react";
 
 function App() {
   const cld = new Cloudinary({ cloud: { cloudName: "dwi8mo6ev" } });
@@ -18,7 +19,7 @@ function App() {
 
   // ********** scripty loader ******************* //
   const apiKey = process.env.REACT_APP_AMPLI_API_KEY;
-  const initializeAmplitude = () => {
+  const initializeAmplitude = userCallback(() => {
     amplitude.init(apiKey, "lp-test-vl@gmail.com", {
       fetchRemoteConfig: true,
       autocapture: {
@@ -30,7 +31,7 @@ function App() {
         elementInteractions: true,
       },
     });
-  };
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
