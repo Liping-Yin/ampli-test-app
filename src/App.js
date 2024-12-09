@@ -19,7 +19,7 @@ function App() {
 
   // ********** scripty loader ******************* //
   const apiKey = process.env.REACT_APP_AMPLI_API_KEY;
-  const initializeAmplitude = userCallback(() => {
+  const initializeAmplitude = useCallback(() => {
     amplitude.init(apiKey, "lp-test-vl@gmail.com", {
       fetchRemoteConfig: true,
       autocapture: {
