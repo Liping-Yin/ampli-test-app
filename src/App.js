@@ -1,12 +1,11 @@
 import "./App.css";
 import * as amplitude from "@amplitude/analytics-browser";
-import { sessionReplayPlugin } from "@amplitude/plugin-session-replay-browser";
+// import { sessionReplayPlugin } from "@amplitude/plugin-session-replay-browser";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { auto } from "@cloudinary/url-gen/actions/resize";
 import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
 import { AdvancedImage } from "@cloudinary/react";
 import { useEffect, useState } from "react";
-import LoginForm from "./LoginForm";
 
 function App() {
   const cld = new Cloudinary({ cloud: { cloudName: "dwi8mo6ev" } });
